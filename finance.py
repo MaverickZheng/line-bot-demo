@@ -1,6 +1,6 @@
 import io  # 資料暫存檔
+import os
 import base64
-import configparser  # 設定檔解析器
 import difflib
 import arrow  # 時間處理
 import json
@@ -487,12 +487,9 @@ class FinanceProcess:
 class FinanceInfo:
 
     def __init__(self):
-        # 讀取 config
-        config = configparser.ConfigParser()
-        config.read('config.ini')
-        self.imgur_client_id = config.get(
-            'imgur', 'client_ID')  # 讀取 imgur 的基本資料
-        self.fugle_api_key = config.get('fugle', 'api_key')  # 讀取 fugle 的基本資料
+        # 讀取環境變量(金鑰)
+        self.imgur_client_id = os.environ.get("IMGUR_CLIENT_ID")  # Imgur 金鑰
+        self.fugle_api_key = os.environ.get("FUGLE_API_KEY")  # Fugle 金鑰
 
         # matplotlib 字體設定
         fontManager.addfont('src/TaipeiSansTCBeta-Regular.ttf')
@@ -989,12 +986,9 @@ class FinanceInfo:
 class StockMarket:
 
     def __init__(self):
-        # 讀取 config
-        config = configparser.ConfigParser()
-        config.read('config.ini')
-        # self.imgur_client_id = config.get(
-        #     'imgur', 'client_ID')  # 讀取 imgur 的基本資料
-        self.fugle_api_key = config.get('fugle', 'api_key')  # 讀取 fugle 的基本資料
+        # 讀取環境變量(金鑰)
+        self.imgur_client_id = os.environ.get("IMGUR_CLIENT_ID")  # Imgur 金鑰
+        self.fugle_api_key = os.environ.get("FUGLE_API_KEY")  # Fugle 金鑰
 
         # 建立連線物件
         self.session = requests.Session()

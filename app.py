@@ -1,6 +1,5 @@
 from flask import Flask, request, abort
-
-import configparser  # 設定檔解析器
+import os
 
 # 載入 LINE Message API 相關函式庫
 from linebot import LineBotApi
@@ -15,22 +14,22 @@ from finance import *
 from otherfunction import *
 
 # 讀取 LINE 聊天機器人的基本資料設定檔
-config = configparser.ConfigParser()
-config.read('config.ini')
-channel_access_token = config.get('line-bot', 'channel_access_token')
-channel_secret = config.get('line-bot', 'channel_secret')
+channel_access_token = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+channel_secret = os.environ.get("LINE_CHANNEL_SECRET")
 
 line_bot_api = LineBotApi(channel_access_token)   # 確認 token 是否正確
 handler = WebhookHandler(channel_secret)          # 確認 secret 是否正確
 
-# 載入自定義函式
+# 讀取自定義程式
 wx_menu = WeatherMenu()
 wx_info = WeatherInfo()
 wx_process = WeatherProcess()
 finance_menu = FinanceMenu()
 finance_process = FinanceProcess()
+
 lotterymenu = LotteryMenu()
 lottery_generate = LotteryGenerateNums()
+
 whoscall = Whoscall()
 other_function = OtherFunction()
 
