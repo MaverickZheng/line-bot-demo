@@ -1,3 +1,4 @@
+gunicorn
 arrow==1.3.0
 beautifulsoup4==4.12.2
 exchange-calendars==4.2.8
