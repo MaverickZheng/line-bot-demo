@@ -57,7 +57,7 @@ class FinanceMenu:
                     ),
                     MessageAction(
                         label='📖使用說明📖',
-                        data='$finance_explain'
+                        text='$finance_explain'
                     ),
                     # PostbackAction(
                     #     label='📖使用說明📖',
