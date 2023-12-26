@@ -26,17 +26,30 @@ wx_info = WeatherInfo()
 wx_process = WeatherProcess()
 finance_menu = FinanceMenu()
 finance_process = FinanceProcess()
-
 lotterymenu = LotteryMenu()
 lottery_generate = LotteryGenerateNums()
-
 whoscall = Whoscall()
 other_function = OtherFunction()
 
+
+# 使用說明
+explain_text = """使用說明：
+目前僅提供天氣、金融、來電反查、樂透彩、油價等服務，其它服務仍在開發中！
+
+若點選按鈕無反應時，請再次點擊一次，以喚醒機器人；而金融服務的部分，圖表產出需要時間，請您耐心等待！
+
+1.🌦天氣：可查詢天氣預報、目前位置天氣、各類天氣圖。
+2.📈金融：可查詢匯率、黃金的報價與趨勢圖，而股市部分僅提供文字報價。
+3.☎來電反查：可查詢不明簡訊和電話號碼。
+4.樂透彩：幫你產生樂透的投注號碼，以及查詢近期中獎號碼。
+5.⛽️油價：查詢目前油價資訊。
+"""
+
 app = Flask(__name__)
 
-
 # 接收訊息
+
+
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -75,7 +88,7 @@ def handle_message(event: MessageEvent):
             '新聞': TextSendMessage('規劃中，敬請期待！'),
             '來電反查': whoscall.menu(),
             '備忘錄': TextSendMessage('規劃中，敬請期待！'),
-            '使用說明': TextSendMessage('努力中，再等等！'),
+            '使用說明': TextSendMessage(explain_text),
             '發票中獎號碼': TextSendMessage('努力中，再等等！'),
             '樂透彩': lotterymenu.lottery_menu(),
             '油價': other_function.query_oil_price(),
