@@ -55,12 +55,15 @@ class FinanceMenu:
                         text=None,
                         data='Stock'
                     ),
-                    PostbackAction(
+                    MessageAction(
                         label='📖使用說明📖',
-                        text=None,
-                        data='finance_explain'
+                        data='$finance_explain'
                     ),
-
+                    # PostbackAction(
+                    #     label='📖使用說明📖',
+                    #     text=None,
+                    #     data='$finance_explain'
+                    # ),
                 ]
             )
         )
@@ -413,10 +416,26 @@ class FinanceProcess:
             'usd_realtime': self.finance_info.gold_usd_realtime(),
         }
 
+        # 使用說明
+        self.explain_text = """使用說明：
+1.黃金：提供臺銀黃金即時牌價與趨勢圖
+2.匯率：提供臺銀即時匯率、交叉匯率表、以及近半年匯率走勢圖
+3.股市：僅提供加權指數、櫃買指數與個股的即時文字報價
+
+資料來源：
+臺銀：黃金即時牌價、趨勢圖、即時匯率
+富聯網：交叉匯率表
+鉅亨網：匯率趨勢、加權指數、櫃買指數、個股
+"""
+
     def process(self, receive):
 
+        # 金融服務使用說明
+        if 'finance_explain' in receive:
+            content = TextSendMessage(self.explain_text)
+
         # 黃金
-        if 'gold' in receive:
+        elif 'gold' in receive:
             receive_code = receive.split(' ')[1]
 
             # 處理黃金即時報價
@@ -455,7 +474,7 @@ class FinanceProcess:
             search = receive.replace('$$ ', '')
 
             if 'explain' in search:
-                message = '目前可提供精確、模糊搜尋\n\n精確搜尋方法：\n$$ q 台積電、$$ q 2330\n\n模糊搜尋方法：\n$$ q 台灣50\n模糊搜尋結果：\n「您可能想搜尋以下股票名稱：元大台灣50、富邦台50、國泰台灣領袖50」'
+                message = '目前可提供精確、模糊搜尋\n\n精確搜尋方法：\n$$ q 台積電 或 $$ q 2330\n\n模糊搜尋方法：\n$$ q 台灣50\n模糊搜尋結果：\n「您可能想搜尋以下股票名稱：元大台灣50、富邦台50、國泰台灣領袖50」'
                 content = TextSendMessage(message)
 
             # 檢查輸入格式，若錯誤則提醒用戶
