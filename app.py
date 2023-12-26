@@ -166,4 +166,4 @@ def handle_postback(event: PostbackEvent):
 
 # 主程式
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="13.228.225.19", port=10000)
