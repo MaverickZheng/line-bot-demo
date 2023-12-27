@@ -49,8 +49,8 @@ class WeatherMenu:
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://www.cwa.gov.tw/Data/fcst_img/SFCcombo.jpg',
-                        title=None,
-                        text='天氣圖 1',
+                        title='天氣圖',
+                        text='最佳使用方法：直接點開看原圖！',
                         actions=[
                             PostbackAction(
                                 label='衛星雲圖(真實色)',
@@ -71,8 +71,8 @@ class WeatherMenu:
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://www.cwa.gov.tw/Data/fcst_img/SFCcombo.jpg',
-                        title=None,
-                        text='天氣圖 2',
+                        title='天氣圖',
+                        text='最佳使用方法：直接點開看原圖！',
                         actions=[
                             PostbackAction(
                                 label='溫度分布圖',
@@ -93,8 +93,8 @@ class WeatherMenu:
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://www.cwa.gov.tw/V8/assets/img/radar/radar_coverage.jpg',
-                        title=None,
-                        text='📡雷達回波圖(降雨)',
+                        title='📡雷達回波圖(降雨)',
+                        text='最佳使用方法：直接點開看原圖！',
                         actions=[
                             PostbackAction(
                                 label='北台灣雷達回波圖',
