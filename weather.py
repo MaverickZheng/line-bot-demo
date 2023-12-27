@@ -29,8 +29,8 @@ class WeatherMenu:
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://cdn.pixabay.com/photo/2017/01/17/16/46/cloud-1987416_1280.png',
-                        title=None,
-                        text='🔍天氣查詢',
+                        title='🔍天氣查詢',
+                        text='查詢天氣與預報資料',
                         actions=[
                             URIAction(
                                 label='目前位置天氣(需傳送位置)',
