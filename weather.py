@@ -33,7 +33,7 @@ class WeatherMenu:
                         text='🔍天氣查詢',
                         actions=[
                             URIAction(
-                                label='目前位置天氣',
+                                label='目前位置天氣(需傳送位置)',
                                 uri='https://line.me/R/nv/location/'
                             ),
                             PostbackAction(
