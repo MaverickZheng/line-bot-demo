@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# line bot demo
-=======
 # Line Bot Demo
 
 
@@ -23,4 +20,4 @@ https://kanido386.github.io/2021/07/hackathon-line-hint/
 ## Render 參考資源
 * 將 python flask Web app 部屬到 Render
 https://hackmd.io/@KszW-VhuTFiRIBfviwcT7Q/r1ZCbfSLj
->>>>>>> feature
+
