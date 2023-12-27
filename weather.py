@@ -534,49 +534,55 @@ class WeatherInfo:
 
     # 真實色衛星雲圖
     def graph_satellite(self):
-        link = 'https://www.cwa.gov.tw/Data/satellite/LCC_VIS_TRGB_2750/LCC_VIS_TRGB_2750.jpg'
+        original_link = 'https://www.cwa.gov.tw/Data/satellite/LCC_VIS_TRGB_2750/LCC_VIS_TRGB_2750.jpg'
+        preview_link = 'https://www.cwa.gov.tw/Data/satellite/LCC_VIS_TRGB_1000/LCC_VIS_TRGB_1000_forPreview.jpg'
         message = ImageSendMessage(
-            original_content_url=link, preview_image_url=link)
+            original_content_url=original_link, preview_image_url=preview_link)
 
         return message
 
     # 雷達回波圖
     def graph_radar(self):
-        link = 'https://www.cwa.gov.tw/Data/radar/CV1_TW_3600.png'
+        original_link = 'https://www.cwa.gov.tw/Data/radar/CV1_TW_3600.png'
+        preview_link = 'https://www.cwa.gov.tw/Data/radar/CV1_TW_1000_forPreview.png'
         message = ImageSendMessage(
-            original_content_url=link, preview_image_url=link)
+            original_content_url=original_link, preview_image_url=preview_link)
 
         return message
 
     # 雨量圖
     def graph_rainfall(self):
-        link = 'https://www.cwa.gov.tw/Data/rainfall/QZJ.jpg'
+        original_link = 'https://www.cwa.gov.tw/Data/rainfall/QZJ.jpg'
+        preview_link = 'https://www.cwa.gov.tw/Data/rainfall/QZJ_forPreview.jpg'
         message = ImageSendMessage(
-            original_content_url=link, preview_image_url=link)
+            original_content_url=original_link, preview_image_url=preview_link)
 
         return message
 
     # 溫度分布圖
     def graph_temperature(self):
-        link = 'https://www.cwa.gov.tw/Data/temperature/temp.jpg'
+        original_link = 'https://www.cwa.gov.tw/Data/temperature/temp.jpg'
+        preview_link = 'https://www.cwa.gov.tw/Data/temperature/temp_forPreview.jpg'
         message = ImageSendMessage(
-            original_content_url=link, preview_image_url=link)
+            original_content_url=original_link, preview_image_url=preview_link)
 
         return message
 
     # 即時閃電圖
     def graph_lightning(self):
-        link = 'https://www.cwa.gov.tw/Data/lightning/lightning_s.jpg'
+        original_link = 'https://www.cwa.gov.tw/Data/lightning/lightning_s.jpg'
+        preview_link = 'https://www.cwa.gov.tw/Data/lightning/lightning_s_forPreview.jpg'
         message = ImageSendMessage(
-            original_content_url=link, preview_image_url=link)
+            original_content_url=original_link, preview_image_url=preview_link)
 
         return message
 
     # 紫外線圖
     def graph_uvi(self):
-        link = 'https://www.cwa.gov.tw/Data/UVI/UVI_CWB.png'
+        original_link = 'https://www.cwa.gov.tw/Data/UVI/UVI_CWB.png'
+        preview_link = 'https://www.cwa.gov.tw/Data/UVI/UVI_forPreview.png'
         message = ImageSendMessage(
-            original_content_url=link, preview_image_url=link)
+            original_content_url=original_link, preview_image_url=preview_link)
 
         return message
 
