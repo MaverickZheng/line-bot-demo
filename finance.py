@@ -1039,12 +1039,12 @@ class StockMarket:
     # 發送請求
     def __web_requests_get(self, url, headers):
 
-        response = self.session.get(url, headers=headers, timeout=5)
+        response = self.session.get(url, headers=headers, timeout=7)
 
         while response.status_code != requests.codes.ok:
             t = random.uniform(0.5, 2.5)
             time.sleep(t)
-            response = self.session.get(url, headers=headers, timeout=5)
+            response = self.session.get(url, headers=headers, timeout=7)
 
         return response
 
@@ -1129,17 +1129,43 @@ class StockMarket:
 
         if today != data['date']:
 
-            client = RestClient(api_key=self.fugle_api_key)
-            stock_lc = client.stock.intraday.tickers(
-                type='EQUITY', exchange="TWSE", market='TSE')
-            stock_otc = client.stock.intraday.tickers(
-                type='EQUITY', exchange="TPEx", market='OTC')
-            stock_list = stock_lc['data'] + stock_otc['data']
+            # 建立爬蟲所需資料  資料來源為Histock
+            url = 'https://histock.tw/stock/rank.aspx?p=all'
+            headers = {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Cache-Control': 'max-age=0',
+                'Dnt': '1',
+                'Referer': 'https://histock.tw/stock/rank.aspx?p=all',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'same-origin',
+                'Sec-Fetch-User': '?1',
+                'Upgrade-Insecure-Requests': '1',
+                'User-Agent': UserAgent().random
+            }
 
-            # 整理股票清單
+            response = self.__web_requests_get(url, headers)  # 發送請求
+            response.encoding = 'utf-8'
+
+            # 擷取資料
+            soup = bs4.BeautifulSoup(response.text, "html.parser")
+            stock_list = soup.select('table')[0]
+            df = pd.read_html(stock_list.prettify())[0]
+
             data = {}
             data['date'] = today
-            data['stock_list'] = stock_list
+            data['stock_list'] = {}
+
+            for idx in range(len(df)):
+                if '臺' in df.iloc[idx, 1]:
+                    stock_name = df.iloc[idx, 1].replace('臺', '台')
+                else:
+                    stock_name = df.iloc[idx, 1]
+
+                data['stock_list'][df.iloc[idx, 0]] = df.iloc[idx, 0]
+                data['stock_list'][stock_name] = df.iloc[idx, 0]
 
             # 將股票清單匯出為檔案
             with open(file_path, "w", encoding="utf-8") as file:
@@ -1149,16 +1175,8 @@ class StockMarket:
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
 
-        # 整理股票清單為dict
-        stock_symbol = {}
-        for item in data['stock_list']:
-            if 'name' in item.keys():
-                if '臺' in item['name']:
-                    item['name'] = item['name'].replace('臺', '台')
-                stock_symbol[item['name']] = item['symbol']
-                stock_symbol[item['symbol']] = item['symbol']
-
-        self.stock_symbol = stock_symbol
+        # 整理股票清單
+        self.stock_symbol = data['stock_list']
 
     # 個股即時文字報價報價
     def __stock_quote(self, symbol):
