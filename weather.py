@@ -408,7 +408,7 @@ class WeatherInfo:
         obs_data = obs_data.to_dict()
 
         obs_info = obs_data[area]
-        obs_abs = "觀測時間：{obs_time}\n溫度： {C_T}°C\n體感溫度： {C_AT}°C\n相對濕度： {RH}%\n時雨量： {Rain}mm" \
+        obs_abs = "觀測時間：{obs_time}\n溫度： {C_T} °C\n體感溫度： {C_AT} °C\n相對濕度： {RH} %\n時雨量： {Rain} mm" \
             .format(obs_time=obs_time, **obs_info)
 
         obs_abs = '\n'.join(['--------天氣觀測--------', obs_abs])
