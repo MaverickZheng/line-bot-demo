@@ -113,7 +113,7 @@ def handle_message(event: MessageEvent):
             line_bot_api.reply_message(event.reply_token, reply_content)
 
         else:
-            reply_content = TextSendMessage('輸入錯誤！請檢查內容！')
+            reply_content = TextSendMessage('您輸入有誤！請檢查內容！')
             line_bot_api.reply_message(event.reply_token, reply_content)
 
     # 目前位置天氣
