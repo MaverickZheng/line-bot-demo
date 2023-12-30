@@ -59,11 +59,6 @@ class FinanceMenu:
                         label='📖使用說明📖',
                         text='$finance_explain'
                     ),
-                    # PostbackAction(
-                    #     label='📖使用說明📖',
-                    #     text=None,
-                    #     data='$finance_explain'
-                    # ),
                 ]
             )
         )
@@ -340,7 +335,7 @@ class FinanceMenu:
                     CarouselColumn(
                         thumbnail_image_url='https://cdn.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg',
                         title='個股即時報價',
-                        text='目前只提供個股的文字即時報價，精確搜尋的格式為「$$ q 006208」、「$$ q 富邦台50」。並且支援模糊搜尋，格式如：「$$ q 台灣50」。',
+                        text='目前只提供個股的文字即時報價',
                         actions=[
                             MessageAction(
                                 label='個股即時報價範例',
@@ -400,10 +395,13 @@ class FinanceProcess:
         }
 
         # 使用說明
-        self.explain_text = """使用說明：
+        self.explain_text = """資訊提供項目：
 1.黃金：提供臺銀黃金即時牌價與趨勢圖
 2.匯率：提供臺銀即時匯率、交叉匯率表、以及近半年匯率走勢圖
 3.股市：僅提供加權指數、櫃買指數與個股的即時文字報價
+
+股市的操作說明：
+精確搜尋的格式為「$$ q 006208」、「$$ q 富邦台50」。並且支援模糊搜尋，格式如：「$$ q 台灣50」。
 
 產製趨勢圖需要時間，請耐心等待！
 
