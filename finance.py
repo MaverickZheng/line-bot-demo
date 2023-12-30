@@ -86,7 +86,7 @@ class FinanceMenu:
                                 text='$gold twd_realtime'
                             ),
                             PostbackAction(
-                                label='📈臺幣黃金走勢📈',
+                                label='📈臺幣黃金走勢📈',  # 跳出quickreply
                                 text=None,
                                 data='$gold_twd_trend'
                             ),
@@ -102,7 +102,7 @@ class FinanceMenu:
                                 text='$gold usd_realtime'
                             ),
                             PostbackAction(
-                                label='📈美元黃金走勢📈',
+                                label='📈美元黃金走勢📈',  # 跳出quickreply
                                 text=None,
                                 data='$gold_usd_trend'
                             ),
@@ -177,11 +177,6 @@ class FinanceMenu:
                 title='匯率資訊',
                 text='即時匯率與歷史走勢',
                 actions=[
-                    # PostbackAction(
-                    #     label='臺灣銀行即時匯率',
-                    #     text=None,
-                    #     data='$fxrate realtime'
-                    # ),
                     MessageAction(
                         label='臺灣銀行即時匯率',
                         text='$fxrate realtime'
@@ -345,17 +340,13 @@ class FinanceMenu:
                     CarouselColumn(
                         thumbnail_image_url='https://cdn.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg',
                         title='個股即時報價',
-                        text='目前只提供個股的文字即時報價',
+                        text='目前只提供個股的文字即時報價，精確搜尋的格式為「$$ q 006208」、「$$ q 富邦台50」。並且支援模糊搜尋，格式如：「$$ q 台灣50」。',
                         actions=[
                             MessageAction(
-                                label='個股搜尋說明',
-                                text='$$ explain'
+                                label='個股即時報價範例',
+                                text='$$ q 006208'
                             ),
-                            # PostbackAction(
-                            #     label='',
-                            #     text=None,
-                            #     data=''
-                            # ),
+
                         ]
                     ),
                     CarouselColumn(
@@ -367,11 +358,7 @@ class FinanceMenu:
                                 label='加權指數即時報價',
                                 text='$$ q twse'
                             ),
-                            # PostbackAction(
-                            #     label='',
-                            #     text=None,
-                            #     data=''
-                            # ),
+
                         ]
                     ),
                     CarouselColumn(
@@ -383,11 +370,7 @@ class FinanceMenu:
                                 label='櫃買指數即時報價',
                                 text='$$ q tpex'
                             ),
-                            # PostbackAction(
-                            #     label='',
-                            #     text=None,
-                            #     data=''
-                            # ),
+
                         ]
                     )
                 ]
@@ -469,19 +452,19 @@ class FinanceProcess:
                 content = self.finance_info.fxrate_trend(currency)
 
             else:
-                content = TextSendMessage('輸入錯誤！請檢查輸入內容！')
+                content = TextSendMessage('您輸入有誤喔！請檢查內容！')
 
         # 股市
         elif '$$' in receive:
             search = receive.replace('$$ ', '')
 
-            if 'explain' in search:
-                message = '目前可提供精確、模糊搜尋\n\n精確搜尋方法：\n$$ q 台積電 或 $$ q 2330\n\n模糊搜尋方法：\n$$ q 台灣50\n模糊搜尋結果：\n「您可能想搜尋以下股票名稱：元大台灣50、富邦台50、國泰台灣領袖50」'
-                content = TextSendMessage(message)
+            # if 'explain' in search:
+            #     message = '目前可提供精確、模糊搜尋\n\n精確搜尋方法：\n$$ q 台積電 或 $$ q 2330\n\n模糊搜尋方法：\n$$ q 台灣50\n模糊搜尋結果：\n「您可能想搜尋以下股票名稱：元大台灣50、富邦台50、國泰台灣領袖50」'
+            #     content = TextSendMessage(message)
 
             # 檢查輸入格式，若錯誤則提醒用戶
-            elif len(search.split(' ')) != 2:
-                content = TextSendMessage('您輸入的格式有誤喔！請檢查輸入內容！')
+            if len(search.split(' ')) != 2:
+                content = TextSendMessage('您輸入的格式有誤喔！請檢查內容！')
 
             # 檢查輸入格式，若正確則執行
             else:
@@ -499,7 +482,7 @@ class FinanceProcess:
                         data_type, stock_symbol)
 
         else:
-            content = TextSendMessage('輸入錯誤！請檢查輸入內容！')
+            content = TextSendMessage('您輸入有誤喔！請檢查內容！')
 
         return content
 
