@@ -1148,22 +1148,22 @@ class StockMarket:
             response.encoding = 'utf-8'
 
             # 擷取資料
-            soup = bs4.BeautifulSoup(response.text, "html.parser")
-            stock_list = soup.select('table')[0]
-            df = pd.read_html(stock_list.prettify())[0]
+            dom = etree.HTML(response.text, etree.HTMLParser())
+            stock_symbol = dom.xpath('//*[@id="CPHB1_gv"]/tr/td[1]/text()')
+            stock_name = dom.xpath('//*[@id="CPHB1_gv"]/tr/td[2]/a/text()')
 
             data = {}
             data['date'] = today
             data['stock_list'] = {}
 
-            for idx in range(len(df)):
-                if '臺' in df.iloc[idx, 1]:
-                    stock_name = df.iloc[idx, 1].replace('臺', '台')
+            for idx in range(len(stock_symbol)):
+                if '臺' in stock_name[idx]:
+                    corp = stock_name[idx].replace('臺', '台')
                 else:
-                    stock_name = df.iloc[idx, 1]
+                    corp = stock_name[idx]
 
-                data['stock_list'][df.iloc[idx, 0]] = df.iloc[idx, 0]
-                data['stock_list'][stock_name] = df.iloc[idx, 0]
+                data['stock_list'][stock_symbol[idx]] = stock_symbol[idx]
+                data['stock_list'][corp] = stock_symbol[idx]
 
             # 將股票清單匯出為檔案
             with open(file_path, "w", encoding="utf-8") as file:
