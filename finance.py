@@ -1057,8 +1057,11 @@ class StockMarket:
         vol = data["200067"]/100000000
 
         # 時間擷取和轉換
-        ct = arrow.get(data['200007'], tzinfo="Asia/Taipei")
-        ct = arrow.get(ct).format("YYYY-MM-DD HH:mm:ss")
+        if '200007' in data.keys():
+            ct = arrow.get(data['200007'], tzinfo="Asia/Taipei")
+            ct = arrow.get(ct).format("YYYY-MM-DD HH:mm:ss")
+        else:
+            ct = '市場收盤'
 
         name = data["200009"]  # 商品名稱
         cp = f'\n成交： {data["6"]}'
@@ -1191,8 +1194,11 @@ class StockMarket:
             vol = f'{vol:,.2f} 萬'
 
         # 時間擷取和轉換
-        ct = arrow.get(data['200007'], tzinfo="Asia/Taipei")
-        ct = arrow.get(ct).format("YYYY-MM-DD HH:mm:ss")
+        if '200007' in data.keys():
+            ct = arrow.get(data['200007'], tzinfo="Asia/Taipei")
+            ct = arrow.get(ct).format("YYYY-MM-DD HH:mm:ss")
+        else:
+            ct = '市場收盤'
 
         name = f'{data["200009"]} 【{data["200010"]}】'  # 商品名稱
         cp = f'\n成交： {data["6"]}'
