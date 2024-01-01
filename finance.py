@@ -533,7 +533,8 @@ class FinanceInfo:
             t = random.uniform(0.5, 2.5)
             time.sleep(t)
             response = self.session.get(url, headers=headers, timeout=5)
-            self.session.close()
+
+        self.session.close()
 
         return response
 
@@ -1025,7 +1026,8 @@ class StockMarket:
             t = random.uniform(0.5, 2.5)
             time.sleep(t)
             response = self.session.get(url, headers=headers, timeout=7)
-            self.session.close()
+
+        self.session.close()
 
         return response
 
