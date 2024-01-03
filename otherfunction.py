@@ -73,7 +73,7 @@ class Whoscall:
             return TextSendMessage(content)
 
     # 使用網路執行查詢號碼
-    def __query_pn(self, pn):
+    def __query_pn(self, pn) -> str:
 
         # 建立爬蟲所需資料
         url = f'https://whocall.cc/search/{pn}'

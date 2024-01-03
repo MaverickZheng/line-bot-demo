@@ -181,7 +181,7 @@ class LotteryGenerateNums:
         return content
 
     # 號碼產生器
-    def __generate_num(self, limit, count):
+    def __generate_num(self, limit, count) -> str:
         numbers = random.sample(range(1, limit + 1), count)
         numbers.sort()
 

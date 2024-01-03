@@ -367,7 +367,6 @@ class WeatherInfo:
             self.areacode = json.load(file)
 
     # 發送請求
-
     def __web_requests(self, url, headers):
 
         response = requests.get(url, headers=headers, timeout=5)
@@ -380,7 +379,7 @@ class WeatherInfo:
         return response
 
     # 查詢目前天氣
-    def __current_weather(self, city, area):
+    def __current_weather(self, city, area) -> str:
 
         # 建立爬蟲所需資料
         url = f'https://www.cwa.gov.tw/Data/js/GT/TableData_GT_T_{city}.js'
@@ -416,7 +415,7 @@ class WeatherInfo:
         return obs_abs
 
     # 天氣描述
-    def __describe_weather(self, city):
+    def __describe_weather(self, city) -> str:
 
         # 建立爬蟲所需資料
         url = 'https://www.cwa.gov.tw/Data/js/fcst/W50_Data.js?'
@@ -444,7 +443,7 @@ class WeatherInfo:
         return weather_desc
 
     # 空氣品質
-    def __aq_info(self, city):
+    def __aq_info(self, city) -> str:
 
         # 建立爬蟲所需資料
         url = 'https://www.cwa.gov.tw/Data/js/AirQuality.js?'
