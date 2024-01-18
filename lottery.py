@@ -20,13 +20,13 @@ class LotteryMenu:
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com.tw/images/intx_logo01.jpg',
+                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/super_lotto638.svg',
                         title=None,
                         text='威力彩',
                         actions=[
                             URIAction(
                                 label='威力彩開獎結果',
-                                uri='https://www.taiwanlottery.com.tw/lotto/superlotto638/history.aspx'
+                                uri='https://www.taiwanlottery.com/lotto/result/super_lotto638'
                             ),
                             # PostbackAction(
                             #     label='威力彩開獎結果',
@@ -41,13 +41,13 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com.tw/images/intx_logo02.jpg',
+                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/lotto649.svg',
                         title=None,
                         text='大樂透',
                         actions=[
                             URIAction(
                                 label='大樂透開獎結果',
-                                uri='https://www.taiwanlottery.com.tw/lotto/Lotto649/history.aspx'
+                                uri='https://www.taiwanlottery.com/lotto/result/lotto649'
                             ),
                             # PostbackAction(
                             #     label='大樂透開獎結果',
@@ -62,13 +62,13 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com.tw/images/intx_logo03.jpg',
+                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/daily_cash.svg',
                         title=None,
                         text='今彩539',
                         actions=[
                             URIAction(
                                 label='今彩539開獎結果',
-                                uri='https://www.taiwanlottery.com.tw/Lotto/Dailycash/history.aspx'
+                                uri='https://www.taiwanlottery.com/lotto/result/daily_cash'
                             ),
                             # PostbackAction(
                             #     label='今彩539開獎結果',
@@ -83,34 +83,13 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com.tw/images/intx_logo13.jpg',
-                        title=None,
-                        text='雙贏彩',
-                        actions=[
-                            URIAction(
-                                label='雙贏彩開獎結果',
-                                uri='https://www.taiwanlottery.com.tw/Lotto/Lotto1224/history.aspx'
-                            ),
-                            # PostbackAction(
-                            #     label='雙贏彩開獎結果',
-                            #     text = '雙贏彩開獎結果',
-                            #     data='彩券 雙贏彩開獎結果'
-                            # ),
-                            PostbackAction(
-                                label='產生雙贏彩投注號碼',
-                                text=None,
-                                data='LGN_twowin'
-                            ),
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com.tw/images/intx_logo05.jpg',
+                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/3_d.svg',
                         title=None,
                         text='3星彩',
                         actions=[
                             URIAction(
                                 label='3星彩開獎結果',
-                                uri='https://www.taiwanlottery.com.tw/Lotto/3D/history.aspx'
+                                uri='https://www.taiwanlottery.com/lotto/result/3_d'
                             ),
                             # PostbackAction(
                             #     label='3星彩開獎結果',
@@ -125,13 +104,13 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com.tw/images/intx_logo06.jpg',
+                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/4_d.svg',
                         title=None,
                         text='4星彩',
                         actions=[
                             URIAction(
                                 label='4星彩開獎結果',
-                                uri='https://www.taiwanlottery.com.tw/Lotto/4D/history.aspx'
+                                uri='https://www.taiwanlottery.com/lotto/result/4_d'
                             ),
                             # PostbackAction(
                             #     label='4星彩開獎結果',
@@ -170,7 +149,6 @@ class LotteryGenerateNums:
             'LGN_superlotto': self.generate_superlotto(),
             'LGN_biglotto': self.generate_biglotto(),
             'LGN_dailycash': self.generate_dailycash(),
-            'LGN_twowin': self.generate_twowin(),
             'LGN_3stars': self.generate_3stars(),
             'LGN_4stars': self.generate_4stars(),
         }
@@ -239,19 +217,8 @@ class LotteryGenerateNums:
 
         return message
 
-    # 產生五組雙贏彩號碼
-    def generate_twowin(self, num_of_sets=5):
-        all_numbers = self.__lottery_sets(24, 12, num_of_sets)
-
-        all_numbers = '\n-----------------------\n'.join(
-            [f'第{idx+1}組： {numbers}' for idx, numbers in enumerate(all_numbers)])
-        all_numbers = '\n\n'.join(['雙贏彩幸運號碼組合：', all_numbers, '祝您早日中大獎！'])
-
-        message = TextSendMessage(all_numbers)
-
-        return message
-
     # 產生五個三星彩號碼
+
     def generate_3stars(self, num_of_sets=5):
         all_numbers = random.sample(range(1, 999 + 1), num_of_sets)
         for idx, number in enumerate(all_numbers):
