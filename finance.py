@@ -1047,7 +1047,7 @@ class StockMarket:
         return response
 
     # 即時文字報價
-    def __index_quote(self, url):
+    def __index_quote(self, url) -> str:
         # 建立爬蟲所需資料
         headers = self.headers
         headers['Origin'] = 'https://invest.cnyes.com'
@@ -1113,7 +1113,7 @@ class StockMarket:
             return message
 
     # 更新股票清單
-    def __update_stock_list(self):
+    def __update_stock_list(self) -> None:
 
         # 取得當前日期
         today = arrow.now()
@@ -1177,7 +1177,7 @@ class StockMarket:
         self.stock_symbol = data['stock_list']
 
     # 個股即時文字報價報價
-    def __stock_quote(self, symbol):
+    def __stock_quote(self, symbol) -> str:
         # 建立爬蟲所需資料
         url = f'https://ws.api.cnyes.com/ws/api/v1/quote/quotes/TWS:{symbol}:STOCK?column=K,E,KEY,M,AI'
         headers = self.headers
