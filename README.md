@@ -26,7 +26,7 @@
 ## 展示
 掃描以下QRcode，或是直接 [點擊](https://lin.ee/uQJhNXf) 加入好友
 
-![Alt text](image-1.png)
+![Alt text](line_qrcode.png)
 
 [⏫回大綱](#大綱)
 
