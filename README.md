@@ -70,8 +70,8 @@
 
 ## 執行環境要求
 * 本專案建議在 Python 3.8.10 、 [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) 環境之下執行
-* `.env` 填寫內容可參考 [.env.example](https://github.com/cheng1103/line-bot-demo/blob/main/.env.example)
-* 模組要求詳見 [requirements.txt](https://github.com/cheng1103/line-bot-demo/blob/main/requirements.txt)
+* `.env` 填寫內容可參考 [.env.example](.env.example)
+* 模組要求詳見 [requirements.txt](requirements.txt)
 
 [⏫回大綱](#大綱)
 
