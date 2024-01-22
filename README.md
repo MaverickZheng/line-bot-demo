@@ -53,6 +53,10 @@
 
 ![Weather demo](demo_weather.gif)
 
+* 查詢來電資訊
+
+![Whoscall demo](demo_whoscall.gif)
+
 * 油價
 
 ![Oil Price demo](demo_oil_price.gif)
@@ -75,7 +79,7 @@
 +-- finance.py  # 處理金融資訊、爬取資料、回傳樣板訊息
 +-- lottery.py  # 處理樂透開獎、產生樂透號碼、回傳樣板訊息
 +-- otherfunction.py  # 處理油價查詢和來電查詢、回傳樣板訊息
-+-- requirements.txt  # 相依模組
++-- requirements.txt  # 相依套件
 +-- .env.example  # 環境變數範例
 +-- build.sh   # 部署在Render上的腳本
 +-- README.md  # 說明文件
@@ -86,7 +90,7 @@
 ## 執行環境要求
 * 本專案建議在 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) 、 [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) 環境之下執行
 * `.env` 填寫內容可參考 [.env.example](.env.example)
-* 模組要求詳見 [requirements.txt](requirements.txt)
+* 套件要求詳見 [requirements.txt](requirements.txt)
 
 [⏫回大綱](#大綱)
 
