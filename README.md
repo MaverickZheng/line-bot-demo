@@ -29,7 +29,7 @@
 ## 開始使用
 掃描以下QRcode，或是點擊 [連結](https://lin.ee/uQJhNXf) 加入好友
 
-![Line QRcode](line_qrcode.png)
+![Line QRcode](asset/line_qrcode.png)
 
 [⏫回大綱](#大綱)
 
@@ -51,15 +51,19 @@
 ## 操作示範
 * 天氣
 
-![Weather demo](demo_weather.gif)
+![Weather demo](assets/demo_weather.gif)
 
 * 查詢來電資訊
 
-![Whoscall demo](demo_whoscall.gif)
+![Whoscall demo](assets/demo_whoscall.gif)
+
+* 樂透彩
+
+![Lotto demo](assets/demo_lotto.gif)
 
 * 油價
 
-![Oil Price demo](demo_oil_price.gif)
+![Oil price demo](assets/demo_oil_price.gif)
 
 [⏫回大綱](#大綱)
 
@@ -67,8 +71,9 @@
 ## 專案目錄
 ```
 .
++-- assets      # gif、png等素材圖檔
 +-- src
-|   +-- TaipeiSansTCBeta-Regular.ttf  # 繁體中文字體包
+|   +-- TaipeiSansTCBeta-Regular.ttf  # 繁體中文字體檔
 |   +-- code_area.json   # 氣象署行政區代碼轉換列表
 |   +-- code_city.json   # 氣象署縣市代碼轉換列表
 |   +-- code_city.json   # 氣象署縣市代碼轉換列表
