@@ -29,7 +29,7 @@
 ## 開始使用
 掃描以下QRcode，或是點擊 [連結](https://lin.ee/uQJhNXf) 加入好友
 
-![Alt text](line_qrcode.png)
+![Line QRcode](line_qrcode.png)
 
 [⏫回大綱](#大綱)
 
@@ -49,10 +49,13 @@
 
 
 ## 操作示範
-1. 天氣
+* 天氣
 
-![Alt text](weather_demo.gif)
+![Weather demo](demo_weather.gif)
 
+* 油價
+
+![Oil Price demo](demo_oil_price.gif)
 
 [⏫回大綱](#大綱)
 
