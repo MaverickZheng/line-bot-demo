@@ -3,8 +3,11 @@
 ![Static Badge](https://img.shields.io/badge/Flask-3.0.0-white)
 ![Static Badge](https://img.shields.io/badge/Line_bot_sdk-3.5.0-green)
 
-現在的生活離不開網路，而查找資訊又需要頻繁切換網頁，使用上並不方便。因此藉由Line Bot，整合生活的相關資訊，做到一站式的資訊提供服務。本專案目前提供天氣、金融、樂透、油價以及不明來電的查詢功能，詳細功能說明，請點擊[連結](#功能)。
+<p align=center>
+    <img src="assets/head_shot.jpg" width="60%">
+</p>
 
+「生活小幫手」是一款可以整合生活資訊的Line Bot，因為現在的生活離不開網路，而資訊又是分散在各個網站中，搜尋時需要頻繁切換網頁，使用上並不方便。因此藉由「生活小幫手」，整合生活的相關資訊，提供一站式的資訊服務。本專案目前提供天氣、金融、樂透、油價以及不明來電的查詢功能，詳細的功能說明，請點擊[連結](#功能)。
 
 
 ## 大綱
@@ -39,7 +42,7 @@
 
 * 📈 查詢金融資訊：提供黃金、匯率、股市的即時報價和歷史走勢圖 （股市僅提供台股的即時報價）。而查詢即時個股報價的部分，__可接受股票名稱/代號的模糊搜尋，例如輸入「$$ q 台灣50」，會收到「您可能想搜尋以下股票名稱：元大台灣50、富邦台50、國泰台灣領袖50」的訊息。__
 
-* ☎ 查詢來電資訊：查詢不明簡訊與電話號碼。 資料來源：[查電話](https://whocall.cc/)
+* ☎ 查詢來電資訊：查詢不明簡訊與電話號碼， __查詢方式：@0911510914、@0223491234。__ 資料來源：[查電話](https://whocall.cc/)
 
 * 🤑 樂透彩：產生樂透的投注號碼，以及查詢台灣彩券的開獎結果。 派彩結果：[台灣彩券](https://www.taiwanlottery.com/)
 
@@ -109,7 +112,7 @@
 * 請參考 [建立 LINE Channel](https://steam.oxxostudio.tw/category/python/example/line-developer.html) 和 [建立並串接 Webhook](https://steam.oxxostudio.tw/category/python/example/line-webhook.html) 兩篇教學，完成必要設定。而Webhook URL的設定，需要在網址結尾加上`/callback`
 ### 本地端 
 1. 安裝 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) (Linux 免安裝)，Windwos 需安裝 [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)、Linux 則是安裝[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)，並且按照官方文件說明進行設定
-2. 按以下步驟操作，接著在 `.env.example` 中設定環境變數，最後將檔名修改為 `.env`。接著開啟 __Ngrok__ ，將 Ngrok 的網址填入 Webhook URL ，最後下指令 `python app.py`
+2. 按以下步驟操作，接著在 `.env.example` 中設定環境變數，再將檔名修改為 `.env`。接著開啟 __Ngrok__ ，將 Ngrok 的網址填入 Webhook URL ，最後下指令 `python app.py`
 ```shell
 mkdir linebot
 cd linebot
