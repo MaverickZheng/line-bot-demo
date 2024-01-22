@@ -7,11 +7,11 @@
     <img src="assets/head_shot.jpg" width="60%">
 </p>
 
-「生活小幫手」是一款可以整合生活資訊的Line Bot，因為現在的生活離不開網路，而資訊又是分散在各個網站中，搜尋時需要頻繁切換網頁，使用上並不方便。因此藉由「生活小幫手」，整合生活的相關資訊，提供一站式的資訊服務。本專案目前提供天氣、金融、樂透、油價以及不明來電的查詢功能，詳細的功能說明，請點擊[連結](#功能)。
+「生活小幫手」是一款可以整合生活資訊的Line Bot，因為現在的生活離不開網路，但資訊是分散在各個網站中，搜尋時需要頻繁切換網頁，使用上並不方便。因此藉由「生活小幫手」，整合生活相關的資訊，提供一站式的生活資訊服務。本專案目前提供天氣、金融、樂透、油價以及不明來電的查詢功能，詳細的功能說明，請點擊[連結](#功能)。
 
 
 ## 大綱
-- [使用限制、警語](#使用限制、警語)
+- [使用限制和警語](#使用限制和警語)
 - [開始使用](#開始使用)
 - [功能](#功能)
 - [操作示範](#操作示範)
@@ -21,8 +21,8 @@
 - [參考資料](#參考資料)
 
 
-## 使用限制、警語
-* __《！！重要！！》__ 本專案是部署在免費版的Render上，每當超過15分鐘無任何人使用時，會進入休眠狀態，可藉由切換選單來喚醒，喚醒時需等待2~3分鐘，接著即可正常使用。
+## 使用限制和警語
+* __《！！重要！！》本專案是部署在免費版的Render上，每當超過15分鐘無任何人使用時，會進入休眠狀態，可藉由切換選單來喚醒，喚醒時需等待2~3分鐘，接著即可正常使用。__
 
 * 金融資訊的部分，資料來源分別為：[台灣銀行](https://rate.bot.com.tw/)(黃金、即時匯率報價)、[富聯網](https://ww2.money-link.com.tw/Exchange/CrossRate.aspx)(交叉匯率)、[鉅亨網](https://www.cnyes.com/)(匯率走勢、加權指數、櫃買指數、個股股價)。__開發者不保證資料的正確性。__
 
@@ -78,11 +78,10 @@
 ## 專案目錄
 ```
 .
-+-- assets      # gif、png等素材圖檔
++-- assets      # 包含 gif、png 等素材圖檔
 +-- src
 |   +-- TaipeiSansTCBeta-Regular.ttf  # 繁體中文字體檔
 |   +-- code_area.json   # 氣象署行政區代碼轉換列表
-|   +-- code_city.json   # 氣象署縣市代碼轉換列表
 |   +-- code_city.json   # 氣象署縣市代碼轉換列表
 |   +-- stock_list.json  # 股票代碼轉換列表
 |
@@ -100,7 +99,7 @@
 
 
 ## 執行環境要求
-* 本專案建議在 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) 、 [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) 環境之下執行
+* 本專案建議在 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) 、 [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) 所建立的虛擬環境之下執行，確保不會發生相依套件上的衝突。
 * `.env` 填寫內容可參考 [.env.example](.env.example)
 * 套件要求詳見 [requirements.txt](requirements.txt)
 
@@ -111,7 +110,7 @@
 ### Line 設定
 * 請參考 [建立 LINE Channel](https://steam.oxxostudio.tw/category/python/example/line-developer.html) 和 [建立並串接 Webhook](https://steam.oxxostudio.tw/category/python/example/line-webhook.html) 兩篇教學，完成必要設定。而Webhook URL的設定，需要在網址結尾加上`/callback`
 ### 本地端 
-1. 安裝 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) (Linux 免安裝)，Windwos 需安裝 [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)、Linux 則是安裝[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)，並且按照官方文件說明進行設定
+1. 安裝 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) (Linux 免安裝)，Windwos 需安裝 [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)、Linux 則是安裝[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)，並且按照官方文件說明進行設定 (需確認 Virtualenvwrapper 已經安裝並正確設定，以方便接下來建立虛擬環境)
 2. 按以下步驟操作，接著在 `.env.example` 中設定環境變數，再將檔名修改為 `.env`。接著開啟 __Ngrok__ ，將 Ngrok 的網址填入 Webhook URL ，最後下指令 `python app.py`
 ```shell
 mkdir linebot
