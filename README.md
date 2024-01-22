@@ -29,7 +29,7 @@
 ## 開始使用
 掃描以下QRcode，或是點擊 [連結](https://lin.ee/uQJhNXf) 加入好友
 
-![Line QRcode](asset/line_qrcode.png)
+![Line QRcode](assets/line_qrcode.png)
 
 [⏫回大綱](#大綱)
 
@@ -53,7 +53,11 @@
 
 ![Weather demo](assets/demo_weather.gif)
 
-* 查詢來電資訊
+* 金融資訊
+
+![Finance demo](assets/demo_finance.gif)
+
+* 來電反查
 
 ![Whoscall demo](assets/demo_whoscall.gif)
 
