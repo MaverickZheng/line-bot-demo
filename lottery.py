@@ -20,7 +20,7 @@ class LotteryMenu:
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/super_lotto638.svg',
+                        thumbnail_image_url='https://i.imgur.com/I7MRLLe.jpg',
                         title=None,
                         text='威力彩',
                         actions=[
@@ -41,7 +41,7 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/lotto649.svg',
+                        thumbnail_image_url='https://i.imgur.com/1MsgVr2.jpg',
                         title=None,
                         text='大樂透',
                         actions=[
@@ -62,7 +62,7 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/daily_cash.svg',
+                        thumbnail_image_url='https://i.imgur.com/O6IwIrh.jpg',
                         title=None,
                         text='今彩539',
                         actions=[
@@ -83,7 +83,7 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/3_d.svg',
+                        thumbnail_image_url='https://i.imgur.com/MI9fRwB.jpg',
                         title=None,
                         text='3星彩',
                         actions=[
@@ -104,7 +104,7 @@ class LotteryMenu:
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://www.taiwanlottery.com/images/logo/4_d.svg',
+                        thumbnail_image_url='https://i.imgur.com/nyfWCcz.jpg',
                         title=None,
                         text='4星彩',
                         actions=[
