@@ -54,23 +54,28 @@
 ## 操作示範
 * 天氣
 
-![Weather demo](assets/demo_weather.gif)
+<!-- ![Weather demo](assets/demo_weather.gif) -->
+<video src="assets/demo_weather.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
 
 * 金融資訊
 
-![Finance demo](assets/demo_finance.gif)
+<!-- ![Finance demo](assets/demo_finance.gif) -->
+<video src="assets/demo_finance.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
 
 * 來電反查
 
-![Whoscall demo](assets/demo_whoscall.gif)
+<!-- ![Whoscall demo](assets/demo_whoscall.gif) -->
+<video src="assets/demo_whoscall.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
 
 * 樂透彩
 
-![Lotto demo](assets/demo_lotto.gif)
+<!-- ![Lotto demo](assets/demo_lotto.gif) -->
+<video src="assets/demo_lotto.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
 
 * 油價
 
-![Oil price demo](assets/demo_oil_price.gif)
+<!-- ![Oil price demo](assets/demo_oil_price.gif) -->
+<video src="demo_oil_price.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
 
 [⏫回大綱](#大綱)
 
