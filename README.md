@@ -109,7 +109,7 @@
 ## 安裝與執行
 ### Line 設定
 * 請參考 [建立 LINE Channel](https://steam.oxxostudio.tw/category/python/example/line-developer.html) 和 [建立並串接 Webhook](https://steam.oxxostudio.tw/category/python/example/line-webhook.html) 兩篇教學，完成必要設定。而Webhook URL的設定，需要在網址結尾加上`/callback`
-### 本地端 
+### 本地端執行
 1. 安裝 [Python 3.8.10](https://www.python.org/downloads/release/python-3810/) (Linux 免安裝)，Windwos 需安裝 [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)、Linux 則是安裝[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)，並且按照官方文件說明進行設定 (需確認 Virtualenvwrapper 已經安裝並正確設定，以方便接下來建立虛擬環境)
 2. 按以下步驟操作，接著在 `.env.example` 中設定環境變數，再將檔名修改為 `.env`。接著開啟 __Ngrok__ ，將 Ngrok 的網址填入 Webhook URL ，最後下指令 `python app.py`
 ```shell
@@ -119,9 +119,9 @@ git clone https://github.com/cheng1103/line-bot-demo.git
 mkvirtualenv linebot
 pip install -r requirements.txt
 ```
-### Render
+### Render部署
 * 部署方法可參考 [Render 官方文件](https://docs.render.com/deploy-flask)
-* 中文教學可移至[參考資料](#參考資料)中 __第5點__ 的內容
+* 中文教學可移至[參考資料](#參考資料)中 __第5點和第6點__ 的內容
 
 [⏫回大綱](#大綱)
 
@@ -131,7 +131,8 @@ pip install -r requirements.txt
 2. [LINE BOT 教學](https://steam.oxxostudio.tw/category/python/example/line-bot.html)
 3. [[Python+LINE Bot教學]提升使用者體驗的按鈕樣板訊息(Buttons template message)實用技巧](https://www.learncodewithmike.com/2020/07/line-bot-buttons-template-message.html)
 4. [黑客松 LINE Bot 賽前補帖](https://kanido386.github.io/2021/07/hackathon-line-hint/)
-5. [將 python flask Web app 部屬到 Render](https://hackmd.io/@KszW-VhuTFiRIBfviwcT7Q/r1ZCbfSLj)
-6. [你知道對專案來說，README.md 有多麼重要嗎？ ── 工程師血淚史](https://medium.com/dean-lin/%E4%BD%A0%E7%9F%A5%E9%81%93%E5%B0%8D%E5%B0%88%E6%A1%88%E4%BE%86%E8%AA%AA-readme-md-%E6%9C%89%E5%A4%9A%E9%BA%BC%E9%87%8D%E8%A6%81%E5%97%8E-%E5%B7%A5%E7%A8%8B%E5%B8%AB%E8%A1%80%E6%B7%9A%E5%8F%B2-c0fb0908343e)
+5. [關於從 Heroku 跳到 Render 這件事情](https://israynotarray.com/other/20221213/3036227586/)
+6. [將 python flask Web app 部屬到 Render](https://hackmd.io/@KszW-VhuTFiRIBfviwcT7Q/r1ZCbfSLj)
+7. [你知道對專案來說，README.md 有多麼重要嗎？ ── 工程師血淚史](https://medium.com/dean-lin/%E4%BD%A0%E7%9F%A5%E9%81%93%E5%B0%8D%E5%B0%88%E6%A1%88%E4%BE%86%E8%AA%AA-readme-md-%E6%9C%89%E5%A4%9A%E9%BA%BC%E9%87%8D%E8%A6%81%E5%97%8E-%E5%B7%A5%E7%A8%8B%E5%B8%AB%E8%A1%80%E6%B7%9A%E5%8F%B2-c0fb0908343e)
 
 [⏫回大綱](#大綱)
