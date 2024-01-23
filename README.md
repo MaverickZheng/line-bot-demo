@@ -70,7 +70,7 @@
 
 * 油價
 
-<video src="demo_oil_price.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
+<video src="assets/demo_oil_price.mp4" autoplay="autoplay" controls="controls" loop="loop"></video>
 
 [⏫回大綱](#大綱)
 
