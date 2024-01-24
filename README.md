@@ -58,19 +58,19 @@
 
 * 金融資訊
 
-![Finance demo](assets/demo_weather.gif)
+![Finance demo](assets/demo_finance.gif)
 
 * 來電反查
 
-![Whoscall demo](assets/demo_weather.gif)
+![Whoscall demo](assets/demo_whoscall.gif)
 
 * 樂透彩
 
-![Lotto demo](assets/demo_weather.gif)
+![Lotto demo](assets/demo_lotto.gif)
 
 * 油價
 
-![Oil price demo](assets/demo_weather.gif)
+![Oil price demo](assets/demo_oil_price.gif)
 
 [⏫回大綱](#大綱)
 
