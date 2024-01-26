@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort, jsonify
 import os
 
 # 載入 LINE Message API 相關函式庫
@@ -47,9 +47,14 @@ explain_text = """使用說明：
 
 app = Flask(__name__)
 
+
+# 使用API喚醒機器人
+@app.route("/wakeup", methods=['GET'])
+def wakaup_api():
+    return jsonify(message='I am working!')
+
+
 # 接收訊息
-
-
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -179,4 +184,4 @@ def handle_postback(event: PostbackEvent):
 
 # 主程式
 if __name__ == "__main__":
-    app.run(host="13.228.225.19", port=10000)
+    app.run()
