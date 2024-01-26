@@ -49,7 +49,7 @@ app = Flask(__name__)
 
 
 # 使用API喚醒機器人
-@app.route("/wakeup", methods=['GET'])
+@app.route("/wakeup", methods=['GET', "HEAD"])
 def wakaup_api():
     return jsonify(message='I am working!')
 
