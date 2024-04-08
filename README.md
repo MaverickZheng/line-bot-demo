@@ -22,9 +22,9 @@
 
 
 ## 使用限制和警語
-* __~~《！！重要！！》本專案是部署在免費版的Render上，每當超過15分鐘無任何人使用時，會進入休眠狀態，可藉由切換選單來喚醒，喚醒時需等待2~3分鐘，接著即可正常使用。~~__　　__目前已使用uptimerobot做定時喚醒！__
+* __《！！重要！！》本專案是部署在免費版的Render上，每當超過15分鐘無任何人使用時，會進入休眠狀態，可藉由切換選單來喚醒，喚醒時需等待2~3分鐘，接著即可正常使用。__
 
-* __《！！重要！！》因為本專案是部署在免費版的Render上，為了控管使用額度，凌晨時段固定停機。__
+
 
 * 金融資訊的部分，資料來源分別為：[台灣銀行](https://rate.bot.com.tw/)(黃金、即時匯率報價)、[富聯網](https://ww2.money-link.com.tw/Exchange/CrossRate.aspx)(交叉匯率)、[鉅亨網](https://www.cnyes.com/)(匯率走勢、加權指數、櫃買指數、個股股價)。__開發者不保證資料的正確性。__
 
@@ -136,5 +136,6 @@ pip install -r requirements.txt
 5. [關於從 Heroku 跳到 Render 這件事情](https://israynotarray.com/other/20221213/3036227586/)
 6. [將 python flask Web app 部屬到 Render](https://hackmd.io/@KszW-VhuTFiRIBfviwcT7Q/r1ZCbfSLj)
 7. [你知道對專案來說，README.md 有多麼重要嗎？ ── 工程師血淚史](https://medium.com/dean-lin/%E4%BD%A0%E7%9F%A5%E9%81%93%E5%B0%8D%E5%B0%88%E6%A1%88%E4%BE%86%E8%AA%AA-readme-md-%E6%9C%89%E5%A4%9A%E9%BA%BC%E9%87%8D%E8%A6%81%E5%97%8E-%E5%B7%A5%E7%A8%8B%E5%B8%AB%E8%A1%80%E6%B7%9A%E5%8F%B2-c0fb0908343e)
+8. [Uptime Robot 老牌免費網頁監控服務，可加入 50 頁面、5 分鐘間距](https://free.com.tw/uptime-robot/)
 
 [⏫回大綱](#大綱)
