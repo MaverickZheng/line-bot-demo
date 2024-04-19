@@ -136,6 +136,7 @@ pip install -r requirements.txt
 5. [關於從 Heroku 跳到 Render 這件事情](https://israynotarray.com/other/20221213/3036227586/)
 6. [將 python flask Web app 部屬到 Render](https://hackmd.io/@KszW-VhuTFiRIBfviwcT7Q/r1ZCbfSLj)
 7. [你知道對專案來說，README.md 有多麼重要嗎？ ── 工程師血淚史](https://medium.com/dean-lin/%E4%BD%A0%E7%9F%A5%E9%81%93%E5%B0%8D%E5%B0%88%E6%A1%88%E4%BE%86%E8%AA%AA-readme-md-%E6%9C%89%E5%A4%9A%E9%BA%BC%E9%87%8D%E8%A6%81%E5%97%8E-%E5%B7%A5%E7%A8%8B%E5%B8%AB%E8%A1%80%E6%B7%9A%E5%8F%B2-c0fb0908343e)
-8. [Uptime Robot 老牌免費網頁監控服務，可加入 50 頁面、5 分鐘間距](https://free.com.tw/uptime-robot/)
+8. [你的git项目需要一个高质量的README](https://juejin.cn/post/6844903845785501710)
+9. [Uptime Robot 老牌免費網頁監控服務，可加入 50 頁面、5 分鐘間距](https://free.com.tw/uptime-robot/)
 
 [⏫回大綱](#大綱)
